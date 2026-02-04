@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이전 대회 - Langcon 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --border-color: #30363d;
+            --accent-mint: #3fb950;
+            --accent-blue: #58a6ff;
+            --accent-orange: #f78166;
+            --accent-purple: #a371f7;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-secondary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+            background: var(--bg-tertiary);
+        }
+
+        nav a.active {
+            color: var(--accent-mint);
+            background: rgba(63, 185, 80, 0.1);
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, var(--accent-mint), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* History Cards */
+        .history-section {
+            padding: 40px 20px;
+        }
+
+        .history-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 24px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .history-card:hover {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 20px rgba(88, 166, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .history-header {
+            background: var(--bg-tertiary);
+            padding: 20px 25px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .history-header::before {
+            content: ">";
+            color: var(--accent-mint);
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+
+        .history-header h2 {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            font-family: 'Courier New', monospace;
+        }
+
+        .history-body {
+            padding: 20px 25px;
+        }
+
+        .history-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .history-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .history-link.website {
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+
+        .history-link.website:hover {
+            background: var(--accent-blue);
+            color: var(--bg-primary);
+        }
+
+        .history-link.youtube {
+            background: rgba(247, 129, 102, 0.1);
+            color: var(--accent-orange);
+            border-color: var(--accent-orange);
+        }
+
+        .history-link.youtube:hover {
+            background: var(--accent-orange);
+            color: var(--bg-primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        footer .hashtag {
+            color: var(--accent-mint);
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            nav ul {
+                gap: 10px;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+
+            .history-links {
+                flex-direction: column;
+            }
+
+            .history-link {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Langcon2026</a></li>
+            <li><a href="schedule.html">발표 및 스탭 안내</a></li>
+            <li><a href="history.html" class="active">이전대회</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>이전 대회 안내</h1>
+    </header>
+
+    <section class="history-section">
+        <div class="container">
+            <div class="history-card">
+                <div class="history-header">
+                    <h2>Langcon 2024</h2>
+                </div>
+                <div class="history-body">
+                    <div class="history-links">
+                        <a href="https://songys.github.io/2024Langcon/" target="_blank" class="history-link website">
+                            웹사이트 방문
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-card">
+                <div class="history-header">
+                    <h2>Langcon 2023</h2>
+                </div>
+                <div class="history-body">
+                    <div class="history-links">
+                        <a href="https://songys.github.io/2023Langcon/" target="_blank" class="history-link website">
+                            웹사이트 방문
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-card">
+                <div class="history-header">
+                    <h2>Langcon 2021</h2>
+                </div>
+                <div class="history-body">
+                    <div class="history-links">
+                        <a href="https://songys.github.io/2021Langcon/" target="_blank" class="history-link website">
+                            웹사이트 방문
+                        </a>
+                        <a href="https://www.youtube.com/playlist?list=PLqkITFr6P-oTd4YenELiGHcKSBdgVaC0L" target="_blank" class="history-link youtube">
+                            발표 동영상 보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-card">
+                <div class="history-header">
+                    <h2>Langcon 2020</h2>
+                </div>
+                <div class="history-body">
+                    <div class="history-links">
+                        <a href="https://songys.github.io/2020LangconOnOff/" target="_blank" class="history-link website">
+                            웹사이트 방문
+                        </a>
+                        <a href="https://www.youtube.com/playlist?list=PLqkITFr6P-oRTpBB7GZB7zRq70RQ4Brqt" target="_blank" class="history-link youtube">
+                            발표 동영상 보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-card">
+                <div class="history-header">
+                    <h2>Langcon 2019</h2>
+                </div>
+                <div class="history-body">
+                    <div class="history-links">
+                        <a href="https://songys.github.io/2019LangCon/" target="_blank" class="history-link website">
+                            웹사이트 방문
+                        </a>
+                        <a href="https://youtu.be/NV5rjDRCebk" target="_blank" class="history-link youtube">
+                            발표 동영상 보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Langcon 2026 - From Text to Action: 언어 모델이 로봇을 만났을 때</p>
+        <p class="hashtag">#2026LangCon</p>
+    </footer>
+</body>
+</html>

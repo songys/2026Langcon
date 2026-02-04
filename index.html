@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langcon 2026 - From Text to Action</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --border-color: #30363d;
+            --accent-mint: #3fb950;
+            --accent-blue: #58a6ff;
+            --accent-orange: #f78166;
+            --accent-purple: #a371f7;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-secondary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+            background: var(--bg-tertiary);
+        }
+
+        nav a.active {
+            color: var(--accent-mint);
+            background: rgba(63, 185, 80, 0.1);
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--accent-mint), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+        }
+
+        /* Poster */
+        .poster-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--bg-primary);
+        }
+
+        .poster-section img {
+            max-width: 100%;
+            max-height: 600px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .poster-placeholder {
+            max-width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            border: 2px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        /* Event Info */
+        .event-info {
+            padding: 50px 20px;
+            background: var(--bg-primary);
+        }
+
+        .info-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .info-card h2 {
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card h2::before {
+            content: ">";
+            color: var(--accent-mint);
+            font-family: 'Courier New', monospace;
+        }
+
+        .info-item {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .info-label {
+            font-weight: 600;
+            min-width: 80px;
+            color: var(--accent-blue);
+        }
+
+        .info-value {
+            flex: 1;
+            color: var(--text-primary);
+        }
+
+        .info-value small {
+            color: var(--text-secondary);
+        }
+
+        .info-value a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .info-value a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sponsors */
+        .sponsors {
+            padding: 50px 20px;
+            background: var(--bg-secondary);
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .sponsors h2 {
+            color: var(--text-primary);
+            margin-bottom: 40px;
+            font-size: 1.5rem;
+        }
+
+        .sponsor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .sponsor-item {
+            background: var(--bg-tertiary);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+            transition: all 0.3s;
+        }
+
+        .sponsor-item:hover {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 15px rgba(88, 166, 255, 0.1);
+        }
+
+        .sponsor-item img {
+            max-width: 140px;
+            max-height: 50px;
+            object-fit: contain;
+        }
+
+        .sponsor-item span {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        footer .hashtag {
+            color: var(--accent-mint);
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Langcon2026</a></li>
+            <li><a href="schedule.html">발표 및 스탭 안내</a></li>
+            <li><a href="history.html">이전대회</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Langcon 2026</h1>
+        <p class="subtitle">From Text to Action: 언어 모델이 로봇을 만났을 때</p>
+    </header>
+
+    <section class="poster-section">
+        <div class="container">
+            <div class="poster-placeholder">
+                포스터 이미지 준비 중
+            </div>
+        </div>
+    </section>
+
+    <section class="event-info">
+        <div class="container">
+            <div class="info-card">
+                <h2>행사 정보</h2>
+                <div class="info-item">
+                    <span class="info-label">일시</span>
+                    <span class="info-value">2026년 2월 28일 (토)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">장소</span>
+                    <span class="info-value">
+                        더케이트윈타워 A동 13F (마이크로소프트 오피스)<br>
+                        <small>서울특별시 종로구 중학동 19</small>
+                    </span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">지도</span>
+                    <span class="info-value">
+                        <a href="https://naver.me/5MS2ifTp" target="_blank">네이버 지도에서 보기</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sponsors">
+        <h2>후원사</h2>
+        <div class="sponsor-grid">
+            <div class="sponsor-item">
+                <span>Microsoft</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Langcon 2026 - From Text to Action: 언어 모델이 로봇을 만났을 때</p>
+        <p class="hashtag">#2026LangCon</p>
+    </footer>
+</body>
+</html>
