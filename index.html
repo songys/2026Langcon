@@ -240,6 +240,102 @@
             font-weight: 500;
         }
 
+        .sponsor-item a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .sponsor-detail {
+            max-width: 800px;
+            margin: 40px auto 0;
+            text-align: left;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .sponsor-detail h3 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .sponsor-detail p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .sponsor-detail a {
+            color: var(--accent-orange);
+            text-decoration: none;
+        }
+
+        .sponsor-detail a:hover {
+            text-decoration: underline;
+        }
+
+        .book-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .book-table th,
+        .book-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .book-table th {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        .book-table td {
+            color: var(--text-primary);
+        }
+
+        .book-table td:first-child,
+        .book-table td:last-child {
+            text-align: center;
+            width: 60px;
+        }
+
+        .book-table th:first-child,
+        .book-table th:last-child {
+            text-align: center;
+            width: 60px;
+        }
+
+        .book-table tfoot td {
+            font-weight: 600;
+            color: var(--accent-mint);
+        }
+
+        .book-table a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .book-table a:hover {
+            color: var(--accent-orange);
+            text-decoration: underline;
+        }
+
+        .event-image {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+        }
+
         /* Footer */
         footer {
             background: var(--bg-secondary);
@@ -330,6 +426,50 @@
             <div class="sponsor-item">
                 <img src="images/sponsors/hanbit.png" alt="한빛미디어">
             </div>
+            <div class="sponsor-item">
+                <a href="https://www.lablup.com/" target="_blank">
+                    <img src="images/sponsors/lablup.png" alt="래블업">
+                </a>
+            </div>
+        </div>
+
+        <div class="sponsor-detail">
+            <h3>한빛미디어 후원 도서</h3>
+            <p>한빛미디어에서 다음과 같이 도서를 후원해 주셨습니다.</p>
+            <table class="book-table">
+                <thead>
+                    <tr><th>No.</th><th>도서명</th><th>권수</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B7276187086&type=book" target="_blank">AI 시대의 생존 게임 주권인가 종속인가</a></td><td>5</td></tr>
+                    <tr><td>2</td><td><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B3757318997" target="_blank">핸즈온 바이브 코딩</a></td><td>1</td></tr>
+                    <tr><td>3</td><td><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B1006008139" target="_blank">쉽고 빠르게 익히는 실전 LLM(2판)</a></td><td>1</td></tr>
+                    <tr><td>4</td><td><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B2593246869&type=book" target="_blank">AI를 움직이는 수학 이야기</a></td><td>1</td></tr>
+                    <tr><td>5</td><td><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B1895034955" target="_blank">실무로 통하는 LLM 애플리케이션 설계</a></td><td>1</td></tr>
+                    <tr><td>6</td><td><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B6347798844&type=book" target="_blank">AI 에이전트 마스터 클래스</a></td><td>1</td></tr>
+                    <tr><td>7</td><td><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B3893502217" target="_blank">대규모 머신러닝 시스템 디자인 패턴</a></td><td>1</td></tr>
+                    <tr><td>8</td><td><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B1292011659" target="_blank">머신러닝 인터뷰 실무 가이드</a></td><td>1</td></tr>
+                    <tr><td>9</td><td><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B3744995906" target="_blank">잘되는 머신러닝 팀엔 이유가 있다</a></td><td>1</td></tr>
+                    <tr><td>10</td><td><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B3240906879&type=book" target="_blank">컨텍스트 엔지니어링으로 구축하는 AI 에이전트</a></td><td>1</td></tr>
+                    <tr><td>11</td><td><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B6142313500" target="_blank">머신러닝 리스크 관리 with 파이썬</a></td><td>1</td></tr>
+                    <tr><td>12</td><td><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B9369633154&type=book" target="_blank">NLP와 LLM 실전 가이드</a></td><td>1</td></tr>
+                    <tr><td>13</td><td><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B3963656224" target="_blank">초소형 머신러닝 TinyML</a></td><td>1</td></tr>
+                    <tr><td>14</td><td><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B1705712480" target="_blank">온디바이스 AI</a></td><td>1</td></tr>
+                    <tr><td>15</td><td><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B8897232901&type=book" target="_blank">로우코드 AI</a></td><td>1</td></tr>
+                    <tr><td>16</td><td><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B3097025728&type=book" target="_blank">제대로 시작하는 챗GPT와 AI 활용 with 파이썬</a></td><td>1</td></tr>
+                </tbody>
+                <tfoot>
+                    <tr><td></td><td>합계</td><td>20</td></tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="sponsor-detail">
+            <h3>래블업 이벤트 안내</h3>
+            <a href="https://go.backend.ai/ko/" target="_blank">
+                <img src="images/sponsors/go.png" alt="Backend.AI GO" class="event-image">
+            </a>
+            <p>래블업에서 <a href="https://go.backend.ai/ko/" target="_blank">Backend.AI GO</a>를 설치하고 사용하신 분들을 대상으로 이벤트를 진행할 예정입니다. 참가하시는 분들은 참여 안내 메일을 참고하셔서 경품에 응모해 주세요!</p>
         </div>
     </section>
 
