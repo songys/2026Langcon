@@ -127,6 +127,25 @@
             box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.15);
         }
 
+        .cta-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--accent-mint), var(--accent-blue));
+            color: #0d1117;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(63, 185, 80, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(63, 185, 80, 0.5);
+        }
+
         /* Event Info */
         .event-info {
             padding: 50px 20px;
@@ -397,6 +416,8 @@
     <section class="poster-section">
         <div class="container">
             <img src="images/langcon2026.png" alt="Langcon 2026 포스터">
+            <br>
+            <a href="https://event-us.kr/langcon/event/121081" target="_blank" class="cta-button">참가 신청하기</a>
         </div>
     </section>
 
@@ -419,6 +440,12 @@
                     <span class="info-label">지도</span>
                     <span class="info-value">
                         <a href="https://naver.me/5MS2ifTp" target="_blank">네이버 지도에서 보기</a>
+                    </span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">참가 신청</span>
+                    <span class="info-value">
+                        <a href="https://event-us.kr/langcon/event/121081" target="_blank">event-us에서 신청하기</a>
                     </span>
                 </div>
             </div>
