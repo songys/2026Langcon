@@ -329,11 +329,19 @@
             text-decoration: underline;
         }
 
+        .event-image-group {
+            display: block;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
         .event-image {
             max-width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            border: 1px solid var(--border-color);
+            display: block;
+            border: none;
+            margin: 0;
         }
 
         /* Footer */
@@ -466,8 +474,9 @@
 
         <div class="sponsor-detail">
             <h3>래블업 이벤트 안내</h3>
-            <a href="https://go.backend.ai/ko/" target="_blank">
-                <img src="images/sponsors/go.png" alt="Backend.AI GO" class="event-image">
+            <a href="https://go.backend.ai/ko/" target="_blank" class="event-image-group">
+                <img src="images/sponsors/go1.png" alt="Backend.AI GO" class="event-image">
+                <img src="images/sponsors/go.png" alt="Backend.AI GO 기능" class="event-image">
             </a>
             <p>래블업에서 <a href="https://go.backend.ai/ko/" target="_blank">Backend.AI GO</a>를 설치하고 사용하신 분들을 대상으로 이벤트를 진행할 예정입니다. 참가하시는 분들은 참여 안내 메일을 참고하셔서 경품에 응모해 주세요!</p>
         </div>
