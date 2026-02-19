@@ -348,6 +348,32 @@
             text-decoration: underline;
         }
 
+        .book-covers-panorama {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 25px;
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            overflow-x: auto;
+        }
+
+        .book-covers-panorama img {
+            height: 300px;
+            width: auto;
+            border-radius: 6px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .book-covers-panorama img:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+        }
+
         .event-image-group {
             display: block;
             margin-bottom: 15px;
@@ -497,6 +523,13 @@
                     <tr><td></td><td>합계</td><td>20</td></tr>
                 </tfoot>
             </table>
+            <div class="book-covers-panorama">
+                <img src="images/sponsors/book_ai_math.png" alt="AI를 움직이는 수학 이야기">
+                <img src="images/sponsors/book_data_eng.png" alt="데이터 엔지니어링 디자인 패턴">
+                <img src="images/sponsors/book_rust.png" alt="러스트로 갈아타기">
+                <img src="images/sponsors/book_pytorch_llm.png" alt="파이토치로 배우는 LLM & AI">
+                <img src="images/sponsors/book_minimalism.png" alt="미니멀리즘 프로그래머">
+            </div>
         </div>
 
         <div class="sponsor-detail">
