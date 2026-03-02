@@ -150,13 +150,7 @@
             display: flex;
             align-items: center;
             padding: 16px 20px;
-            cursor: pointer;
             gap: 16px;
-            transition: background 0.2s;
-        }
-
-        .session-header:hover {
-            background: var(--bg-tertiary);
         }
 
         .session-time {
@@ -185,25 +179,10 @@
             margin-top: 4px;
         }
 
-        .session-toggle {
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            transition: transform 0.3s;
-        }
-
-        .session-item.open .session-toggle {
-            transform: rotate(180deg);
-        }
-
         .session-details {
-            display: none;
             padding: 0 20px 20px;
             border-top: 1px solid var(--border-color);
             background: var(--bg-tertiary);
-        }
-
-        .session-item.open .session-details {
-            display: block;
         }
 
         .speaker-profile {
@@ -470,13 +449,12 @@
             <div class="session-list">
                 <!-- 10:00 - 10:40 최성준 -->
                 <div class="session-item">
-                    <div class="session-header" onclick="toggleSession(this)">
+                    <div class="session-header">
                         <span class="session-time">10:00 - 10:40</span>
                         <div class="session-info">
                             <div class="session-speaker">최성준 <span class="session-affiliation">고려대학교 인공지능학과</span></div>
                             <div class="session-topic">Human-centered physical intelligence</div>
                         </div>
-                        <span class="session-toggle">▼</span>
                     </div>
                     <div class="session-details">
                         <div class="speaker-profile">
@@ -502,13 +480,12 @@
 
                 <!-- 10:40 - 11:20 이현종 -->
                 <div class="session-item">
-                    <div class="session-header" onclick="toggleSession(this)">
+                    <div class="session-header">
                         <span class="session-time">10:40 - 11:20</span>
                         <div class="session-info">
                             <div class="session-speaker">이현종 <span class="session-affiliation">Roboworks / Makeware</span></div>
                             <div class="session-topic">로봇 제어를 위한 AI 인터렉션 UI/UX 시스템과 로봇서비스</div>
                         </div>
-                        <span class="session-toggle">▼</span>
                     </div>
                     <div class="session-details">
                         <div class="speaker-profile">
@@ -530,13 +507,12 @@
 
                 <!-- 11:20 - 12:00 최수환 -->
                 <div class="session-item">
-                    <div class="session-header" onclick="toggleSession(this)">
+                    <div class="session-header">
                         <span class="session-time">11:20 - 12:00</span>
                         <div class="session-info">
                             <div class="session-speaker">최수환 <span class="session-affiliation">RLWRLD(리얼월드)</span></div>
                             <div class="session-topic">Physical AI 글로벌 트렌드</div>
                         </div>
-                        <span class="session-toggle">▼</span>
                     </div>
                     <div class="session-details">
                         <div class="speaker-profile">
@@ -569,13 +545,12 @@
             <div class="session-list">
                 <!-- 13:00 - 13:35 권태윤 -->
                 <div class="session-item">
-                    <div class="session-header" onclick="toggleSession(this)">
+                    <div class="session-header">
                         <span class="session-time">13:00 - 13:35</span>
                         <div class="session-info">
                             <div class="session-speaker">권태윤 <span class="session-affiliation">마음AI, 서울대학교</span></div>
                             <div class="session-topic">Physical AI Guardrails for Real-World Humanoid Robots</div>
                         </div>
-                        <span class="session-toggle">▼</span>
                     </div>
                     <div class="session-details">
                         <div class="speaker-profile">
@@ -602,13 +577,12 @@
 
                 <!-- 13:35 - 14:10 현청천 -->
                 <div class="session-item">
-                    <div class="session-header" onclick="toggleSession(this)">
+                    <div class="session-header">
                         <span class="session-time">13:35 - 14:10</span>
                         <div class="session-info">
                             <div class="session-speaker">현청천 <span class="session-affiliation">주식회사 위드알엘</span></div>
                             <div class="session-topic">MuJoCo 기반 LLM Agent를 이용한 Panda-Omron 모바일 매니퓰레이터 제어 시스템</div>
                         </div>
-                        <span class="session-toggle">▼</span>
                     </div>
                     <div class="session-details">
                         <div class="speaker-profile">
@@ -630,13 +604,12 @@
 
                 <!-- 14:10 - 14:45 차금강 -->
                 <div class="session-item">
-                    <div class="session-header" onclick="toggleSession(this)">
+                    <div class="session-header">
                         <span class="session-time">14:10 - 14:45</span>
                         <div class="session-info">
                             <div class="session-speaker">차금강 <span class="session-affiliation">CMES</span></div>
                             <div class="session-topic">Detect Anything, Token by Token: The Perception with LLM-based VLMs</div>
                         </div>
-                        <span class="session-toggle">▼</span>
                     </div>
                     <div class="session-details">
                         <div class="speaker-profile">
@@ -672,13 +645,12 @@
             <div class="session-list">
                 <!-- 15:00 - 15:35 송치성 -->
                 <div class="session-item">
-                    <div class="session-header" onclick="toggleSession(this)">
+                    <div class="session-header">
                         <span class="session-time">15:00 - 15:35</span>
                         <div class="session-info">
                             <div class="session-speaker">송치성 <span class="session-affiliation">mpWAV</span></div>
                             <div class="session-topic">쓰지 말고 말하세요: SLM(Speech Language Model)이 바꾸는 음성 AI</div>
                         </div>
-                        <span class="session-toggle">▼</span>
                     </div>
                     <div class="session-details">
                         <div class="speaker-profile">
@@ -704,13 +676,12 @@
 
                 <!-- 15:35 - 16:10 저스틴 유 -->
                 <div class="session-item">
-                    <div class="session-header" onclick="toggleSession(this)">
+                    <div class="session-header">
                         <span class="session-time">15:35 - 16:10</span>
                         <div class="session-info">
                             <div class="session-speaker">저스틴 유 <span class="session-affiliation">Microsoft</span></div>
                             <div class="session-topic">에이전트 프레임워크가 라즈베리 파이를 만났을 때</div>
                         </div>
-                        <span class="session-toggle">▼</span>
                     </div>
                     <div class="session-details">
                         <div class="speaker-profile">
@@ -746,13 +717,12 @@
             <div class="session-list">
                 <!-- 16:25 - 17:00 민형기 -->
                 <div class="session-item">
-                    <div class="session-header" onclick="toggleSession(this)">
+                    <div class="session-header">
                         <span class="session-time">16:25 - 17:00</span>
                         <div class="session-info">
                             <div class="session-speaker">민형기 <span class="session-affiliation">핑크랩</span></div>
                             <div class="session-topic">대화를 알아 듣는 로봇 만들기 - 자연어를 알아듣는 로봇</div>
                         </div>
-                        <span class="session-toggle">▼</span>
                     </div>
                     <div class="session-details">
                         <div class="speaker-profile">
@@ -774,13 +744,12 @@
 
                 <!-- 17:00 - 17:35 안상선 -->
                 <div class="session-item">
-                    <div class="session-header" onclick="toggleSession(this)">
+                    <div class="session-header">
                         <span class="session-time">17:00 - 17:35</span>
                         <div class="session-info">
                             <div class="session-speaker">안상선 <span class="session-affiliation">엠로보</span></div>
                             <div class="session-topic">잘 못들었습니다... 불완전한 텍스트 명령을 극복하는 로봇의 강화학습 및 베이지안 추론</div>
                         </div>
-                        <span class="session-toggle">▼</span>
                     </div>
                     <div class="session-details">
                         <div class="speaker-profile">
@@ -852,11 +821,5 @@
         <p class="hashtag">#2026LangCon</p>
     </footer>
 
-    <script>
-        function toggleSession(header) {
-            const sessionItem = header.parentElement;
-            sessionItem.classList.toggle('open');
-        }
-    </script>
 </body>
 </html>
